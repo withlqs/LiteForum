@@ -1,5 +1,7 @@
 from django.contrib import auth
 from django.contrib.auth import authenticate
+from django.contrib.auth import forms
+from django.contrib.auth import views
 from django.http import Http404, HttpResponseRedirect
 from django.shortcuts import RequestContext
 from django.shortcuts import render_to_response
@@ -7,6 +9,10 @@ from django.shortcuts import render_to_response
 # Create your views here.
 
 admin = 'administrator'
+
+
+def restore(request):
+    return Http404
 
 
 def index(request):
@@ -32,7 +38,7 @@ def login(request):
         if request.user.get_username() == admin:
             return HttpResponseRedirect('/manage/')
         return HttpResponseRedirect('/')
-    return auth.views.login(request)
+    return views.login(request)
 
 
 def profile(request):
@@ -45,7 +51,7 @@ def register(request):
     if request.user.is_authenticated():
         return HttpResponseRedirect('/')
     if request.method == 'POST':
-        form = auth.forms.UserCreationForm(request.POST)
+        form = forms.UserCreationForm(request.POST)
         if form.is_valid():
             form.save()
             auth.login(request, user=authenticate(username=form.cleaned_data['username'],
