@@ -45,14 +45,14 @@ def register(request):
     if request.user.is_authenticated():
         return HttpResponseRedirect('/')
     if request.method == 'POST':
-        form = forms.UserCreationForm(request.POST)
+        form = auth.forms.UserCreationForm(request.POST)
         if form.is_valid():
             form.save()
             auth.login(request, user=authenticate(username=form.cleaned_data['username'],
                                                   password=form.cleaned_data['password1']))
             return HttpResponseRedirect('/manage/')
     else:
-        form = forms.UserCreationForm()
+        form = auth.forms.UserCreationForm()
     return render_to_response('registration/register.html', {
         'form': form,
     }, context_instance=RequestContext(request))
