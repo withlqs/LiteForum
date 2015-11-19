@@ -42,7 +42,7 @@ def topic(request, topic_id):
     user = topic.author.get_user()
     for r in raw_rlist:
         rid += 1
-        rlist.append((rid, r))
+        rlist.append((rid, r, r.author.get_user()['gravatar']))
     if request.method == 'POST':
         form = ReplyForm(request.POST)
         if (form.is_valid()):
