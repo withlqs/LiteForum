@@ -9,7 +9,18 @@
     UserID:{{ user.id }}<br/>
     Username:{{ user.username }}<br/>
 
-    <p><label for="email">Email:</label> <input id="email" name="email" type="email" value="{{ user.email }}"/></p>
+    <input type="hidden" name="username" value="{{ user.username }}"/>
+    <input type="hidden" name="id" value="{{ user.id }}"/>
+    {#    <p><label for="password">Password:</label> <input id="password" name="password" value="{{ password }}" type="password" required="required"/>{% if password_error %}{{ password_error }}{% endif %}</p>#}
+
+    <p><label for="password1">New Password:</label> <input id="passwor1" name="password1"
+                                                           type="password"/>{% if new_password_error %}
+        {{ new_password_error }}{% endif %}</p>
+
+    <p><label for="password2">Repeat New Password:</label> <input id="password2" name="password2" type="password"/></p>
+
+    <p><label for="email">Email:</label> <input id="email" name="email" type="email" value="{{ user.email }}"
+                                                required="required"/></p>
 
     <p><label for="site">Web Site:</label> <input id="site" name="site" type="site" value="{{ user.site }}"/></p>
 

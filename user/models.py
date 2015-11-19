@@ -1,10 +1,12 @@
 from django.db import models
 
+from user import utils
+
 
 class User(models.Model):
     id = models.AutoField(primary_key=True)
     username = models.CharField(blank=False, max_length=30, unique=True)
-    email = models.EmailField(unique=True)
+    email = models.EmailField()
     site = models.TextField()
     location = models.TextField()
     comment = models.TextField()
@@ -17,6 +19,7 @@ class User(models.Model):
             'site': str(self.site),
             'location': str(self.location),
             'comment': str(self.comment),
+            'gravatar': utils.get_gravatar(str(self.email))
         }
         return user
 
