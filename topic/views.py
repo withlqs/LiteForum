@@ -39,6 +39,7 @@ def topic(request, topic_id):
     raw_rlist = topic.reply_set.order_by('pub_date')
     rid = 0
     rlist = []
+    user = topic.author.get_user()
     for r in raw_rlist:
         rid += 1
         rlist.append((rid, r))
@@ -57,7 +58,7 @@ def topic(request, topic_id):
     else:
         form = ReplyForm()
 
-    return render(request, 'topic/topic_detail.html', {'t': topic, 'rlist': rlist, 'form': form})
+    return render(request, 'topic/topic_detail.html', {'t': topic, 'rlist': rlist, 'form': form, 'user': user})
 
 
 def node(request, nodename):

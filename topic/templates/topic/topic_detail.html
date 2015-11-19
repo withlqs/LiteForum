@@ -3,8 +3,14 @@
 {% include 'topic/navbar.html' %}
 
 {% block content %}
-    <h1>{{ t.title }}</h1>
-    <p>{{ t.content }}</p>
+    <div class="panel panel-default" style="margin: 10px">
+        <div class="panel-heading">
+            <h1 class="panel-title"><img src="{{ user.gravater }}"/>{{ t.title }}</h1>
+        </div>
+        <div class="panel-body">
+            {{ t.content }}
+        </div>
+    </div>
 
     <h4>浏览回复</h4>
 
