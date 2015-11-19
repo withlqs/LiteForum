@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
 
+from .forms import TopicForm
 from .models import Topic, Node
 
 
@@ -33,6 +34,9 @@ def node_list(request):
 
 
 def new_post(requset):
+    if requset.method == 'GET':
+        form = TopicForm()
+        return render(requset, 'topic/new_post.html', {'form': form})
     return HttpResponse("New Post")
 
 
