@@ -52,11 +52,28 @@ def profile(request, user_id):
     editable = False
     if request.user.is_authenticated():
         editable = (request.user.get_username() == str(user.username))
+
+    list = user.topic_set.order_by('pub_date')
+    rlist = []
+    rid = 1
+    for t in list:
+        rlist.append((rid, t))
+        rid += 1
+
+    list = user.reply_set.order_by('pub_date')
+    tlist = []
+    tid = 1
+    for r in list:
+        tlist.append((tid, r))
+        tid += 1
+
     return render_to_response(
         'accounts/profile.html',
         {
             'user': user.get_user(),
-            'editable': editable
+            'editable': editable,
+            'topic_list': rlist,
+            'tlist': tlist
         }
     )
 
