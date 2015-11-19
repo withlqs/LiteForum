@@ -15,7 +15,6 @@ def home(request):
     # for t in raw_tlist:
     #     tl.append((t, t.upd_date))
 
-
     tn = []
     for n in raw_nlist:
         tn.append((n, n.topic_set.count()))
@@ -58,7 +57,7 @@ def new_post(requset):
             t.content = form.cleaned_data['content']
             t.node = form.cleaned_data['node']
             t.author = User.objects.get(username=requset.user)
-            print(requset.user)
+            # print(requset.user)
             t.pub_date = timezone.now()
             t.upd_date = timezone.now()
             t.save()
