@@ -7,3 +7,6 @@ class User(models.Model):
     site = models.TextField(default='')
     location = models.TextField(default='')
     comment = models.TextField(default='')
+
+    def __str__(self):
+        return self.username
