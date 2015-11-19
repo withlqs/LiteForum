@@ -1,0 +1,27 @@
+<div class="cell item" style="">
+    <div style="position: absolute; margin: -10px -10px 0px 650px;"></div>
+    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+        <tbody>
+        <tr>
+
+            <td width="48" valign="top" align="center"><a href="/member/Jobin0528"><img
+                    src="//cdn.v2ex.co/avatar/6034/29d0/36606_large.png?m=1447920044" class="avatar" border="0"
+                    align="default" style="max-width: 48px; max-height: 48px;"></a></td>
+            <td width="10"></td>
+
+            <td width="auto" valign="middle"><span class="item_title"><a href="/t/{{ topic.id }}">{{ topic.title }}</a></span>
+
+                <div class="sep5"></div>
+                <span class="small fade"><div class="votes"></div><a class="node"
+                                                                     href="/nodes/{{ topic.node.codename }}">{{ topic.node.name }}</a> &nbsp;•&nbsp; <strong><a
+                        href="/account/profile/{{ topic.author }}">{{ topic.author }}</a></strong> &nbsp;•&nbsp; {{ topic.pub_date }} &nbsp;•&nbsp;{{ topic.reply_set.all.count }}个回复</span>
+            </td>
+            <td width="70" align="right" valign="middle">
+
+                <a href="/t/{{ topic.id }}" class="count_livid">{{ topic.reply_set.all.count }}</a>
+
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
