@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Profile</title>
+</head>
+<body>
+<form name="form-edit" method="post" action="">{% csrf_token %}
+    UserID:{{ user.id }}<br/>
+    Username:{{ user.username }}<br/>
+
+    <input type="hidden" name="username" value="{{ user.username }}"/>
+    <input type="hidden" name="id" value="{{ user.id }}"/>
+    {#    <p><label for="password">Password:</label> <input id="password" name="password" value="{{ password }}" type="password" required="required"/>{% if password_error %}{{ password_error }}{% endif %}</p>#}
+
+    <p><label for="password1">New Password:</label> <input id="passwor1" name="password1"
+                                                           type="password"/>{% if new_password_error %}
+        {{ new_password_error }}{% endif %}</p>
+
+    <p><label for="password2">Repeat New Password:</label> <input id="password2" name="password2" type="password"/></p>
+
+    <p><label for="email">Email:</label> <input id="email" name="email" type="email" value="{{ user.email }}"
+                                                required="required"/></p>
+
+    <p><label for="site">Web Site:</label> <input id="site" name="site" type="site" value="{{ user.site }}"/></p>
+
+    <p><label for="location">Location:</label> <input id="location" name="location" type="location"
+                                                      value="{{ user.location }}"/></p>
+
+    <p><label for="comment">Comment:</label> <input id="comment" name="comment" type="comment"
+                                                    value="{{ user.comment }}"/></p>
+    <input type="submit"/>
+</form>
+</body>
+</html>
