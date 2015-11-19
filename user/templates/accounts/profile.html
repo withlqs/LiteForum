@@ -1,26 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Profile</title>
-</head>
-<body>
-UserID:{{ user.id }}<br/>
-Username:{{ user.username }}<br/>
-{% if user.email %}
-    Email:{{ user.email }}<br/>
-{% endif %}
-{% if user.site %}
-    WebSite:{{ user.site }}<br/>
-{% endif %}
-{% if user.location %}
-    Location:{{ user.location }}<br/>
-{% endif %}
-{% if user.comment %}
-    Location:{{ user.comment }}<br/>
-{% endif %}
-{% if editable %}
-<a href="/accounts/profile/edit">Edit Profile</a>
-{% endif %}
-</body>
-</html>
+{% extends 'topic/base.html' %}
+
+{% include 'topic/navbar.html' %}
+
+{% block content %}
+    <div class="row" style="margin: auto">
+        <div class="col-md-1"><img src="{{ user.gravatar }}"></div>
+        <div class="col-md-3">
+            UserID:{{ user.id }}<br/>
+            Username:{{ user.username }}<br/>
+            {% if user.email %}
+                Email:{{ user.email }}<br/>
+            {% endif %}
+            {% if user.site %}
+                WebSite:{{ user.site }}<br/>
+            {% endif %}
+            {% if user.location %}
+                Location:{{ user.location }}<br/>
+            {% endif %}
+            {% if user.comment %}
+                Location:{{ user.comment }}<br/>
+            {% endif %}
+            {% if editable %}
+                <a href="/accounts/profile/edit">Edit Profile</a>
+            {% endif %}
+        </div>
+    </div>
+
+    <h4>最近主题</h4>
+
+    <div>
+        {% for rid, t in topic_list %}
+            <p>
+                <string>{{ rid }}:{{ t.author }}</string>
+            </p>
+            <p>{{ t.content }}</p>
+        {% endfor %}
+    </div>
+
+    <h4>最近回复</h4>
+
+    <div>
+        {% for tid, r in tlist %}
+            <p>
+                <string>{{ tid }}:{{ r.author }}</string>
+            </p>
+            <p>{{ r.content }}</p>
+        {% endfor %}
+    </div>
+
+{% endblock %}

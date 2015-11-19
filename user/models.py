@@ -19,7 +19,8 @@ class User(models.Model):
             'site': str(self.site),
             'location': str(self.location),
             'comment': str(self.comment),
-            'gravatar': utils.get_gravatar(str(self.email))
+            'gravatar': utils.get_gravatar(str(self.email)),
+            'is_authenticated': True
         }
         return user
 
