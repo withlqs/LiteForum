@@ -5,7 +5,8 @@
 {% block content %}
     <div class="panel panel-default" style="margin: 10px">
         <div class="panel-heading">
-            <h1 class="panel-title"><img src="{{ user.gravater }}"/>{{ t.title }}</h1>
+            <h1 class="panel-title"><img src="{{ user.gravatar }}" height="45" width="45"/>&nbsp;&nbsp;{{ t.title }}
+            </h1>
         </div>
         <div class="panel-body">
             {{ t.content }}
