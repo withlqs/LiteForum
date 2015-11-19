@@ -43,19 +43,29 @@ def login(request):
     return views.login(request, template_name='accounts/login.html')
 
 
-def profile(request):
+def profile(request, user_id):
+    user = User.objects.get(id=user_id)
+    if not user:
+        return Http404
+    editable = False
     if request.user.is_authenticated():
-        print("$$" + request.user.get_username())
-        user = User.objects.get(username=request.user.get_username())
-        print(user.get_user()['username'])
-        return render_to_response('accounts/profile.html', {'user': user.get_user()})
-    return HttpResponseRedirect('/accounts/login/')
+        editable = (request.user.get_username() == str(user.username))
+    return render_to_response(
+        'accounts/profile.html',
+        {
+            'user': user.get_user(),
+            'editable': editable
+        }
+    )
 
 
 def profile_edit(request):
     if request.user.is_authenticated():
         return HttpResponseRedirect('/')
-    return HttpResponseRedirect('/accounts/login/')
+    if request.method == 'GET':
+        ''
+    else:
+        ''
 
 
 def register(request):

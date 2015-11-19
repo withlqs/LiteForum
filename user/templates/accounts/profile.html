@@ -16,7 +16,8 @@ Username:{{ user.username }}<br/>
 {% if user.location %}
     Location:{{ user.location }}<br/>
 {% endif %}
-
+{% if editable %}
 <a href="/accounts/profile/edit">Edit Profile</a>
+{% endif %}
 </body>
 </html>
