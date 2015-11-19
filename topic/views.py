@@ -2,13 +2,28 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
 from django.utils import timezone
 
+from user.models import User
 from .forms import TopicForm
 from .models import Topic, Node
 
 
 def home(request):
+    # raw_tlist = Topic.objects.all()
+    raw_nlist = Node.objects.all()
+
+    # tl = []
+    # for t in raw_tlist:
+    #     tl.append((t, t.upd_date))
+
+
+    tn = []
+    for n in raw_nlist:
+        tn.append((n, n.topic_set.count()))
+
+    # tlist = [x for x, y in sorted(tl, key=lambda x:x[1])[:20]]
     tlist = Topic.objects.order_by('-pub_date')
-    nlist = Node.objects.all()
+    nlist = sorted(tn, key=lambda x: -x[1])[:10]
+
     return render(request, 'topic/home.html', {'tlist': tlist, 'nlist': nlist})
 
 
@@ -42,6 +57,8 @@ def new_post(requset):
             t.title = form.cleaned_data['title']
             t.content = form.cleaned_data['content']
             t.node = form.cleaned_data['node']
+            t.author = User.objects.get(username=requset.user)
+            print(requset.user)
             t.pub_date = timezone.now()
             t.upd_date = timezone.now()
             t.save()

@@ -5,7 +5,7 @@
 {% block title %}首页 - LiteForum{% endblock %}
 {% block content %}
     <div>
-        <h1>主题浏览</h1>
+        <h1>最新主题</h1>
         <ul>
             {% for t in tlist %}
                 <li>
@@ -17,10 +17,10 @@
         </ul>
     </div>
     <div>
-        <h1>节点浏览</h1>
+        <h1>热门节点</h1>
         <ul>
-            {% for n in nlist %}
-                <li><a href="nodes/{{ n.codename }}">{{ n.name }}</a></li>
+            {% for n, cnt in nlist %}
+                <li><a href="nodes/{{ n.codename }}">{{ n.name }}</a>({{ cnt }})</li>
             {% endfor %}
 
         </ul>
