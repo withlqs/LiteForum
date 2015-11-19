@@ -6,7 +6,7 @@
     <h1>节点列表</h1>
     <ul>
         {% for n in nlist %}
-            <li><a href="nodes/{{ n.codename }}">{{ n.name }}({{ n.topic_set.all.count }})</a></li>
+            <li><a href="/nodes/{{ n.codename }}">{{ n.name }}({{ n.topic_set.all.count }})</a></li>
         {% endfor %}
     </ul>
 {% endblock %}

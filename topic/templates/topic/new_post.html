@@ -5,7 +5,7 @@
 {% block title %}发表新主题 - LiteForum{% endblock %}
 
 {% block content %}
-    <form action="new" method="post">
+    <form action="/new" method="post">
         {% csrf_token %}
         {{ form.as_p }}
         <input type="submit" value="发表"/>

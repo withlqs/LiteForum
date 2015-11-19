@@ -36,9 +36,13 @@ def topic_list(request):
 
 def topic(request, topic_id):
     topic = get_object_or_404(Topic, pk=topic_id)
-    rlist = topic.reply_set.order_by('upd_date')
-    cnt = rlist.count()
-    rlist = [(i + 1, rlist[i]) for i in range(0, cnt)]
+    raw_rlist = topic.reply_set.order_by('pub_date')
+    rid = 0
+    rlist = []
+    for r in raw_rlist:
+        rid += 1
+        rlist.append((rid, r))
+
     return render(request, 'topic/topic_detail.html', {'t': topic, 'rlist': rlist})
 
 

@@ -1,0 +1,20 @@
+{% extends 'topic/base.html' %}
+
+{% include 'topic/navbar.html' %}
+
+{% block content %}
+    <h1>{{ t.title }}</h1>
+    <p>{{ t.content }}</p>
+
+    <h4>浏览回复</h4>
+
+    <div>
+        {% for id, r in rlist %}
+            <p>
+                <string>{{ id }}:{{ r.author }}</string>
+            </p>
+            <p>{{ r.content }}</p>
+        {% endfor %}
+    </div>
+
+{% endblock %}
