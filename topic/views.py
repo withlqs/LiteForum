@@ -1,11 +1,13 @@
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
 
-from .models import Topic
+from .models import Topic, Node
 
 
 def home(request):
-    return HttpResponse("Home Page")
+    tlist = Topic.objects.order_by('-reply_count')
+    nlist = Node.objects.all()
+    return render(request, 'topic/home.html', {'tlist': tlist, 'nlist': nlist})
 
 
 def member(request, username):

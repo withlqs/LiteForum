@@ -1,0 +1,28 @@
+{% extends 'topic/base.html' %}
+
+{% include 'topic/navbar.html' %}
+
+{% block title %}首页 - LiteForum{% endblock %}
+{% block content %}
+    <div>
+        <h1>主题浏览</h1>
+        <ul>
+            {% for t in tlist %}
+                <li>
+                    <a href="t/{{ t.id }}">{{ t.title }}</a>
+
+                    <p>{{ t.node.name }} | {{ t.author.username }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div>
+        <h1>节点浏览</h1>
+        <ul>
+            {% for n in nlist %}
+                <li><a href="nodes/{{ n.codename }}">{{ n.name }}</a></li>
+            {% endfor %}
+
+        </ul>
+    </div>
+{% endblock %}
