@@ -13,10 +13,11 @@ urlpatterns = [
     url(r'^nodes$', node_list, name='node_list'),
     url(r'^new$', new_post, name='new_post'),
 
-    url(r'^accounts/login', user.views.login),
-    url(r'^accounts/logout', user.views.logout),
-    url(r'^accounts/register', user.views.register),
-    url(r'^accounts/profile', user.views.profile),
-    url(r'^accounts/restore', user.views.restore),
+    url(r'^accounts/login$', user.views.login),
+    url(r'^accounts/logout$', user.views.logout),
+    url(r'^accounts/register$', user.views.register),
+    url(r'^accounts/profile$', user.views.profile),
+    url(r'^accounts/profile/edit$', user.views.profile_edit),
+    url(r'^accounts/restore$', user.views.restore),
     url(r'^test$', test)
 ]

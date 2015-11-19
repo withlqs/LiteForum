@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+UserID:{{ user.id }}<br/>
+Username:{{ user.username }}<br/>
+{% if user.email %}
+    Email:{{ user.email }}<br/>
+{% endif %}
+{% if user.site %}
+    WebSite:{{ user.site }}<br/>
+{% endif %}
+{% if user.location %}
+    Location:{{ user.location }}<br/>
+{% endif %}
+
+<a href="/accounts/profile/edit">Edit Profile</a>
+</body>
+</html>

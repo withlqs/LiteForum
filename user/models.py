@@ -12,6 +12,10 @@ class User(models.Model):
     def get_user(self):
         user = {
             'username': str(self.username),
-            'id': str(self.id)
+            'id': str(self.id),
+            'email': str(self.email),
+            'site': str(self.site),
+            'location': str(self.location),
+            'comment': str(self.comment),
         }
         return user
