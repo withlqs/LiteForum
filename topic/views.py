@@ -6,7 +6,7 @@ from .models import Topic, Node
 
 
 def home(request):
-    tlist = Topic.objects.order_by('-reply_count')
+    tlist = Topic.objects.order_by('-pub_date')
     nlist = Node.objects.all()
     return render(request, 'topic/home.html', {'tlist': tlist, 'nlist': nlist})
 

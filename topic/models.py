@@ -18,8 +18,6 @@ class Topic(models.Model):
     upd_date = models.DateTimeField(null=True)
     node = models.ForeignKey(Node, null=True)
     author = models.ForeignKey(User, null=True)
-    reply_count = models.IntegerField(default=0)
-    fav_count = models.IntegerField(default=0)
 
     def __str__(self):
         return self.title
