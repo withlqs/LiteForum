@@ -1,17 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Bootstrap 模板</title>
-    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
-    <script src="/static/js/jquery-1.11.3.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <!--[if lt IE 9]>
-         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-         <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-       <![endif]-->
+    <meta charset="UTF-8">
+    <title>Edit Profile</title>
 </head>
 <body>
+<form name="form-edit" method="post" action="">{% csrf_token %}
+    UserID:{{ user.id }}<br/>
+    Username:{{ user.username }}<br/>
 
+    <p><label for="email">Email:</label> <input id="email" name="email" type="email" value="{{ user.email }}"/></p>
 
+    <p><label for="site">Web Site:</label> <input id="site" name="site" type="site" value="{{ user.site }}"/></p>
+
+    <p><label for="location">Location:</label> <input id="location" name="location" type="location"
+                                                      value="{{ user.location }}"/></p>
+
+    <p><label for="comment">Comment:</label> <input id="comment" name="comment" type="comment"
+                                                    value="{{ user.comment }}"/></p>
+    <input type="submit"/>
+</form>
 </body>
 </html>

@@ -60,12 +60,25 @@ def profile(request, user_id):
 
 
 def profile_edit(request):
-    if request.user.is_authenticated():
+    if not request.user.is_authenticated():
         return HttpResponseRedirect('/')
+    user = User.objects.filter(username=request.user.get_username())
     if request.method == 'GET':
-        ''
+        return render_to_response(
+            'accounts/profile_edit.html',
+            {
+                'user': user[0].get_user()
+            },
+            context_instance=RequestContext(request)
+        )
     else:
-        ''
+        user.update(
+            email=request.POST['email'],
+            site=request.POST['site'],
+            location=request.POST['location'],
+            comment=request.POST['comment'],
+        )
+        return HttpResponseRedirect('/accounts/profile/' + str(user[0].id))
 
 
 def register(request):
