@@ -36,12 +36,16 @@ def topic_list(request):
 
 def topic(request, topic_id):
     topic = get_object_or_404(Topic, pk=topic_id)
-    replies = topic.reply_set.all()
-    return render(request, 'topic/topic.html', {'topic': topic, 'replies': replies})
+    rlist = topic.reply_set.order_by('upd_date')
+    cnt = rlist.count()
+    rlist = [(i + 1, rlist[i]) for i in range(0, cnt)]
+    return render(request, 'topic/topic_detail.html', {'t': topic, 'rlist': rlist})
 
 
 def node(request, nodename):
-    return HttpResponse("Node name: %s" % nodename)
+    node = get_object_or_404(Node, codename=nodename)
+    tlist = node.topic_set.order_by('-upd_date')
+    return render(request, 'topic/node.html', {'node': node, 'tlist': tlist})
 
 
 def node_list(request):
@@ -57,12 +61,12 @@ def new_post(requset):
             t.title = form.cleaned_data['title']
             t.content = form.cleaned_data['content']
             t.node = form.cleaned_data['node']
-            t.author = User.objects.get(username=requset.user)
+            t.author = User.objects.get(username=requset.user)  # 这里可能出问题, 应该判断是否找不到对象
             # print(requset.user)
             t.pub_date = timezone.now()
             t.upd_date = timezone.now()
             t.save()
-            return HttpResponseRedirect('/')
+            return HttpResponseRedirect('t/%s', t.id)
     else:
         form = TopicForm()
     return render(requset, 'topic/new_post.html', {'form': form})
