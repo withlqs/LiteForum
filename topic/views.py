@@ -45,7 +45,8 @@ def node(request, nodename):
 
 
 def node_list(request):
-    return HttpResponse("Nodes page")
+    nlist = Node.objects.all()
+    return render(request, 'topic/node_list.html', {'nlist': nlist})
 
 
 def new_post(requset):
