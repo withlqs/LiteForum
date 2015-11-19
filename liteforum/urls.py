@@ -2,7 +2,7 @@ from django.conf.urls import include, url
 from django.contrib import admin
 
 import user
-from topic.views import home, topic, node, node_list, new_post
+from topic.views import home, topic, node, node_list, new_post, test
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
@@ -18,4 +18,5 @@ urlpatterns = [
     url(r'^accounts/register', user.views.register),
     url(r'^accounts/profile', user.views.profile),
     url(r'^accounts/restore', user.views.restore),
+    url(r'^test$', test)
 ]

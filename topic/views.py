@@ -32,3 +32,7 @@ def node_list(request):
 
 def new_post(requset):
     return HttpResponse("New Post")
+
+
+def test(request):
+    return render(request, 'test.html', {})
