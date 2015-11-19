@@ -8,7 +8,7 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', home, name='home'),
     # url(r'^member/(?P<username>[A-Za-z0-9]+)$', views.member, name='member'),
-    url(r'^t/(?P<topic_id>\d+)/$', topic, name='topic'),
+    url(r'^t/(?P<topic_id>\d+)$', topic, name='topic'),
     url(r'^node/(?P<nodename>[A-Za-z0-9]+)$', node, name='node'),
     url(r'^nodes$', node_list, name='node_list'),
     url(r'^new$', new_post, name='new_post'),

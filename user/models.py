@@ -19,3 +19,6 @@ class User(models.Model):
             'comment': str(self.comment),
         }
         return user
+
+    def __str__(self):
+        return self.username
