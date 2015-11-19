@@ -1,5 +1,6 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
+from django.utils import timezone
 
 from .forms import TopicForm
 from .models import Topic, Node
@@ -34,10 +35,20 @@ def node_list(request):
 
 
 def new_post(requset):
-    if requset.method == 'GET':
+    if requset.method == 'POST':
+        form = TopicForm(requset.POST)
+        if form.is_valid():
+            t = Topic()
+            t.title = form.cleaned_data['title']
+            t.content = form.cleaned_data['content']
+            t.node = form.cleaned_data['node']
+            t.pub_date = timezone.now()
+            t.upd_date = timezone.now()
+            t.save()
+            return HttpResponseRedirect('/')
+    else:
         form = TopicForm()
-        return render(requset, 'topic/new_post.html', {'form': form})
-    return HttpResponse("New Post")
+    return render(requset, 'topic/new_post.html', {'form': form})
 
 
 def test(request):
