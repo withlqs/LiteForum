@@ -25,14 +25,14 @@
             <div class="panel-heading">共有{{ t.reply_set.count }}条回复</div>
             {% for rid, r, avt in rlist %}
                 <div class="panel-body">
-                    <div
-                            style="border-bottom: 1px solid #e5e5e5; padding: 15px 15px; margin: -15px -15px;">
+                    <div style="border-bottom: 1px solid #e5e5e5; padding: 15px 15px; margin: -15px -15px;">
                         <div class="media-left">
-                            <a href="/accopunts/profile/{{ r.author.username }}">
+                            <a href="/accopunts/profile/{{ r.author.id }}">
                                 <img src="{{ avt }}" height="48" width="48"/>
                             </a>
                         </div>
                         <div class="media-body">
+                            <span><a href="/accounts/profile/{{ r.author.id }}">{{ r.author.username }}</a></span>
                             {{ r.content }}
                         </div>
                     </div>
