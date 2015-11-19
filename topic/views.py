@@ -3,8 +3,8 @@ from django.shortcuts import render, get_object_or_404
 from django.utils import timezone
 
 from user.models import User
-from .forms import TopicForm
-from .models import Topic, Node
+from .forms import TopicForm, ReplyForm
+from .models import Topic, Node, Reply
 
 
 def home(request):
@@ -20,7 +20,7 @@ def home(request):
         tn.append((n, n.topic_set.count()))
 
     # tlist = [x for x, y in sorted(tl, key=lambda x:x[1])[:20]]
-    tlist = Topic.objects.order_by('-pub_date')
+    tlist = Topic.objects.order_by('-upd_date')
     nlist = sorted(tn, key=lambda x: -x[1])[:10]
 
     return render(request, 'topic/home.html', {'tlist': tlist, 'nlist': nlist})
@@ -42,8 +42,22 @@ def topic(request, topic_id):
     for r in raw_rlist:
         rid += 1
         rlist.append((rid, r))
+    if request.method == 'POST':
+        form = ReplyForm(request.POST)
+        if (form.is_valid()):
+            r = Reply()
+            r.content = form.cleaned_data['content']
+            r.author = User.objects.get(username=request.user)
+            r.pub_date = timezone.now()
+            r.reply_to = topic
+            topic.upd_date = timezone.now()
+            r.save()
+            topic.save()
+            return HttpResponseRedirect("#")
+    else:
+        form = ReplyForm()
 
-    return render(request, 'topic/topic_detail.html', {'t': topic, 'rlist': rlist})
+    return render(request, 'topic/topic_detail.html', {'t': topic, 'rlist': rlist, 'form': form})
 
 
 def node(request, nodename):
@@ -70,7 +84,7 @@ def new_post(requset):
             t.pub_date = timezone.now()
             t.upd_date = timezone.now()
             t.save()
-            return HttpResponseRedirect('t/%s', t.id)
+            return HttpResponseRedirect('/t/%s' % t.id)
     else:
         form = TopicForm()
     return render(requset, 'topic/new_post.html', {'form': form})

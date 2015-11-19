@@ -17,4 +17,13 @@
         {% endfor %}
     </div>
 
+    <div>
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="回复"/>
+        </form>
+
+    </div>
+
 {% endblock %}

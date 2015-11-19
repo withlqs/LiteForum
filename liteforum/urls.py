@@ -7,7 +7,6 @@ from topic.views import home, topic, node, node_list, new_post, test
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', home, name='home'),
-    # url(r'^member/(?P<username>[A-Za-z0-9]+)$', views.member, name='member'),
     url(r'^t/(?P<topic_id>\d+)$', topic, name='topic'),
     url(r'^nodes/(?P<nodename>[A-Za-z0-9]+)$', node, name='node'),
     url(r'^nodes$', node_list, name='node_list'),

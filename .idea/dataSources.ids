@@ -144,10 +144,8 @@
       <column name="content" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
       <column name="pub_date" sqlType="DATETIME" precision="0" scale="-1" nullable="true" jdbcType="12"/>
       <column name="upd_date" sqlType="DATETIME" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="fav_count" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
       <column name="author_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
       <column name="node_id" sqlType="VARCHAR(20)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="reply_count" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
       <primary-key columns="id"/>
       <foreign-key name="#FAKE_topic_topic_1" columns="node_id" ref-table="topic_node" ref-schema="" ref-catalog="" ref-columns="codename" update-rule="3" delete-rule="3" deferrability="1"/>
       <foreign-key name="#FAKE_topic_topic_2" columns="author_id" ref-table="user_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
@@ -159,10 +157,10 @@
     <table name="user_user" schema="" catalog="" type="TABLE">
       <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
       <column name="email" sqlType="VARCHAR(254)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <column name="site" sqlType="TEXT" precision="0" scale="-1" nullable="false" jdbcType="12"/>
       <column name="location" sqlType="TEXT" precision="0" scale="-1" nullable="false" jdbcType="12"/>
       <column name="comment" sqlType="TEXT" precision="0" scale="-1" nullable="false" jdbcType="12"/>
       <column name="username" sqlType="VARCHAR(30)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="site" sqlType="TEXT" precision="0" scale="-1" nullable="false" jdbcType="12"/>
       <primary-key columns="id"/>
       <exported-key name="#FAKE_topic_reply_2" table="topic_reply" schema="" catalog="" columns="author_id"/>
       <exported-key name="#FAKE_topic_topic_2" table="topic_topic" schema="" catalog="" columns="author_id"/>
