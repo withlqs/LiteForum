@@ -7,6 +7,10 @@ from .forms import TopicForm, ReplyForm
 from .models import Topic, Node, Reply
 
 
+def logged(request):
+    return HttpResponseRedirect('/')
+
+
 def home(request):
     # raw_tlist = Topic.objects.all()
     raw_nlist = Node.objects.all()
