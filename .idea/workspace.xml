@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< 3e5df912e042a95da892ca1fdbafea78bb234dbe
     <list default="true" id="16bc7331-eb15-44d7-a9f4-eb9a7d5a4d3e" name="Default" comment="fix merge bug">
       <change type="DELETED" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/user/templates/accounts/login.html" afterPath="$PROJECT_DIR$/user/templates/accounts/login.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/user/templates/accounts/profile_edit.html" afterPath="$PROJECT_DIR$/user/templates/accounts/profile_edit.html" />
+=======
+    <list default="true" id="16bc7331-eb15-44d7-a9f4-eb9a7d5a4d3e" name="Default" comment="adjust UI">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/topic/admin.py" afterPath="$PROJECT_DIR$/topic/admin.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/topic/models.py" afterPath="$PROJECT_DIR$/topic/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/topic/templates/topic/home.html" afterPath="$PROJECT_DIR$/topic/templates/topic/home.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/topic/templates/topic/node.html" afterPath="$PROJECT_DIR$/topic/templates/topic/node.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/topic/templates/topic/topic_detail.html" afterPath="$PROJECT_DIR$/topic/templates/topic/topic_detail.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/topic/views.py" afterPath="$PROJECT_DIR$/topic/views.py" />
+>>>>>>> adjust UI
     </list>
     <ignored path="liteforum.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,6 +55,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+<<<<<<< 3e5df912e042a95da892ca1fdbafea78bb234dbe
       <file leaf-file-name="profile_edit.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/user/templates/accounts/profile_edit.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -58,7 +71,111 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.3468697">
               <caret line="100" column="36" selection-start-line="100" selection-start-column="36" selection-end-line="100" selection-end-column="36" />
+=======
+      <file leaf-file-name="topic_detail.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/topic/templates/topic/topic_detail.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-4.137931">
+              <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="26" selection-end-column="14" />
+              <folding>
+                <element signature="e#496#519#0#HTML" expanded="true" />
+                <element signature="e#641#688#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/topic/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="32" column="32" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/topic/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-45.0">
+              <caret line="78" column="22" selection-start-line="78" selection-start-column="22" selection-end-line="78" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/topic/__init__.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="utils.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/topic/utils.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/topic/templates/topic/home.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-14.4827585">
+              <caret line="21" column="59" selection-start-line="21" selection-start-column="59" selection-end-line="21" selection-end-column="59" />
+              <folding>
+                <element signature="e#357#439#0#HTML" expanded="true" />
+                <element signature="e#756#777#0#HTML" expanded="true" />
+                <element signature="e#857#877#0#HTML" expanded="true" />
+                <element signature="e#1085#1104#0#HTML" expanded="true" />
+                <element signature="e#1207#1254#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="node_list.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/topic/templates/topic/node_list.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.5172415">
+              <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
+>>>>>>> adjust UI
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/topic/admin.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.875">
+              <caret line="21" column="33" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="node.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/topic/templates/topic/node.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-14.172414">
+              <caret line="39" column="10" selection-start-line="39" selection-start-column="10" selection-end-line="39" selection-end-column="10" />
+              <folding>
+                <element signature="e#325#407#0#HTML" expanded="true" />
+                <element signature="e#724#745#0#HTML" expanded="true" />
+                <element signature="e#825#845#0#HTML" expanded="true" />
+                <element signature="e#1053#1072#0#HTML" expanded="true" />
+                <element signature="e#1170#1217#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -100,8 +217,6 @@
         <option value="$PROJECT_DIR$/topic/templates/home.html" />
         <option value="$PROJECT_DIR$/user/admin.py" />
         <option value="$PROJECT_DIR$/topic/templates/topic/topic.html" />
-        <option value="$PROJECT_DIR$/topic/models.py" />
-        <option value="$PROJECT_DIR$/topic/templates/topic/node.html" />
         <option value="$PROJECT_DIR$/topic/templates/topic/new_post.html" />
         <option value="$PROJECT_DIR$/topic/templates/topic/node_list.html" />
         <option value="$PROJECT_DIR$/liteforum/urls.py" />
@@ -109,16 +224,22 @@
         <option value="$PROJECT_DIR$/topic/forms.py" />
         <option value="$PROJECT_DIR$/topic/templates/topic/base.html" />
         <option value="$PROJECT_DIR$/topic/templates/v2/navbar.html" />
-        <option value="$PROJECT_DIR$/topic/templates/topic/home.html" />
         <option value="$PROJECT_DIR$/topic/templates/topic/navbar.html" />
         <option value="$PROJECT_DIR$/user/models.py" />
         <option value="$PROJECT_DIR$/user/views.py" />
         <option value="$PROJECT_DIR$/user/templates/accounts/profile.html" />
-        <option value="$PROJECT_DIR$/topic/views.py" />
         <option value="$PROJECT_DIR$/topic/templates/topic/topic_detail.html" />
+<<<<<<< 3e5df912e042a95da892ca1fdbafea78bb234dbe
         <option value="$PROJECT_DIR$/user/utils.py" />
         <option value="$PROJECT_DIR$/user/templates/accounts/login.html" />
         <option value="$PROJECT_DIR$/user/templates/accounts/profile_edit.html" />
+=======
+        <option value="$PROJECT_DIR$/topic/templates/topic/node.html" />
+        <option value="$PROJECT_DIR$/topic/templates/topic/home.html" />
+        <option value="$PROJECT_DIR$/topic/views.py" />
+        <option value="$PROJECT_DIR$/topic/models.py" />
+        <option value="$PROJECT_DIR$/topic/admin.py" />
+>>>>>>> adjust UI
       </list>
     </option>
   </component>
@@ -762,7 +883,17 @@
       <option name="project" value="LOCAL" />
       <updated>1447979979264</updated>
     </task>
+<<<<<<< 3e5df912e042a95da892ca1fdbafea78bb234dbe
     <option name="localTasksCounter" value="25" />
+=======
+    <task id="LOCAL-00022" summary="adjust UI">
+      <created>1447979801380</created>
+      <option name="number" value="00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1447979801380</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
+>>>>>>> adjust UI
     <servers />
   </component>
   <component name="TodoView">
@@ -781,12 +912,21 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32905295" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3258278" sideWeight="0.5023474" order="12" side_tool="true" content_ui="tabs" />
+<<<<<<< 3e5df912e042a95da892ca1fdbafea78bb234dbe
       <window_info id="manage.py@liteforum" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26985854" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3271523" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36126223" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32535365" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3258278" sideWeight="0.4976526" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2265625" sideWeight="0.49536425" order="0" side_tool="false" content_ui="combo" />
+=======
+      <window_info id="manage.py@liteforum" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27019867" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3271523" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3258278" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3258278" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3258278" sideWeight="0.4976526" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2266935" sideWeight="0.49536425" order="0" side_tool="false" content_ui="combo" />
+>>>>>>> adjust UI
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2283214" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22401074" sideWeight="0.50463575" order="2" side_tool="true" content_ui="tabs" />
@@ -856,8 +996,13 @@
     <MESSAGE value="make topic list look better" />
     <MESSAGE value="add topic view under some node" />
     <MESSAGE value="add topic page and display replies" />
+<<<<<<< 3e5df912e042a95da892ca1fdbafea78bb234dbe
     <MESSAGE value="fix merge bug" />
     <option name="LAST_COMMIT_MESSAGE" value="fix merge bug" />
+=======
+    <MESSAGE value="adjust UI" />
+    <option name="LAST_COMMIT_MESSAGE" value="adjust UI" />
+>>>>>>> adjust UI
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1052,32 +1197,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/user/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/topic/templates/topic/node.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.8965516">
-          <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="79" />
-          <folding>
-            <element signature="e#204#262#0#HTML" expanded="true" />
-            <element signature="e#708#750#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/topic/templates/topic/node_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.5172415">
-          <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/topic/templates/topic/new_post.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.8965516">
@@ -1149,10 +1268,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/topic/admin.py">
+    <entry file="file://$PROJECT_DIR$/user/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.041666668">
+          <caret line="76" column="9" selection-start-line="76" selection-start-column="9" selection-end-line="76" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/topic/tests.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1174,10 +1304,17 @@
         </state>
       </provider>
     </entry>
+<<<<<<< 3e5df912e042a95da892ca1fdbafea78bb234dbe
     <entry file="file://$PROJECT_DIR$/topic/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="39" column="11" selection-start-line="39" selection-start-column="11" selection-end-line="39" selection-end-column="11" />
+=======
+    <entry file="file://$PROJECT_DIR$/user/templates/accounts/profile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.5172415">
+          <caret line="41" column="9" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
+>>>>>>> adjust UI
           <folding />
         </state>
       </provider>
@@ -1198,26 +1335,64 @@
         </state>
       </provider>
     </entry>
+<<<<<<< 3e5df912e042a95da892ca1fdbafea78bb234dbe
     <entry file="file://$PROJECT_DIR$/topic/tests.py">
+=======
+    <entry file="file://$PROJECT_DIR$/topic/templates/topic/topic_detail.html">
+>>>>>>> adjust UI
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="-4.137931">
+          <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="26" selection-end-column="14" />
+          <folding>
+            <element signature="e#496#519#0#HTML" expanded="true" />
+            <element signature="e#641#688#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/user/templates/accounts/profile.html">
+    <entry file="file://$PROJECT_DIR$/topic/templates/topic/home.html">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< 3e5df912e042a95da892ca1fdbafea78bb234dbe
         <state vertical-scroll-proportion="-0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+=======
+        <state vertical-scroll-proportion="-14.4827585">
+          <caret line="21" column="59" selection-start-line="21" selection-start-column="59" selection-end-line="21" selection-end-column="59" />
+          <folding>
+            <element signature="e#357#439#0#HTML" expanded="true" />
+            <element signature="e#756#777#0#HTML" expanded="true" />
+            <element signature="e#857#877#0#HTML" expanded="true" />
+            <element signature="e#1085#1104#0#HTML" expanded="true" />
+            <element signature="e#1207#1254#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/topic/templates/topic/node.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.172414">
+          <caret line="39" column="10" selection-start-line="39" selection-start-column="10" selection-end-line="39" selection-end-column="10" />
+          <folding>
+            <element signature="e#325#407#0#HTML" expanded="true" />
+            <element signature="e#724#745#0#HTML" expanded="true" />
+            <element signature="e#825#845#0#HTML" expanded="true" />
+            <element signature="e#1053#1072#0#HTML" expanded="true" />
+            <element signature="e#1170#1217#0#HTML" expanded="true" />
+          </folding>
+>>>>>>> adjust UI
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/user/templates/accounts/login.html">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< 3e5df912e042a95da892ca1fdbafea78bb234dbe
         <state vertical-scroll-proportion="-8.965517">
           <caret line="29" column="40" selection-start-line="29" selection-start-column="40" selection-end-line="29" selection-end-column="40" />
+=======
+        <state vertical-scroll-proportion="-45.0">
+          <caret line="78" column="22" selection-start-line="78" selection-start-column="22" selection-end-line="78" selection-end-column="22" />
+>>>>>>> adjust UI
           <folding />
         </state>
       </provider>
@@ -1233,32 +1408,60 @@
     <entry file="file://$PROJECT_DIR$/user/utils.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
+<<<<<<< 3e5df912e042a95da892ca1fdbafea78bb234dbe
           <caret line="0" column="13" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
+=======
+          <caret line="32" column="32" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
+>>>>>>> adjust UI
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< 3e5df912e042a95da892ca1fdbafea78bb234dbe
     <entry file="file://$PROJECT_DIR$/user/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.43993232">
           <caret line="15" column="33" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
+=======
+    <entry file="file://$PROJECT_DIR$/user/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.041666668">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+>>>>>>> adjust UI
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< 3e5df912e042a95da892ca1fdbafea78bb234dbe
     <entry file="file://$PROJECT_DIR$/user/templates/accounts/profile_edit.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.275862">
           <caret line="65" column="64" selection-start-line="65" selection-start-column="64" selection-end-line="65" selection-end-column="64" />
+=======
+    <entry file="file://$PROJECT_DIR$/topic/templates/topic/node_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.5172415">
+          <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
+>>>>>>> adjust UI
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< 3e5df912e042a95da892ca1fdbafea78bb234dbe
     <entry file="file://$PROJECT_DIR$/user/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3468697">
           <caret line="100" column="36" selection-start-line="100" selection-start-column="36" selection-end-line="100" selection-end-column="36" />
           <folding />
+=======
+    <entry file="file://$PROJECT_DIR$/topic/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.875">
+          <caret line="21" column="33" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+>>>>>>> adjust UI
         </state>
       </provider>
     </entry>

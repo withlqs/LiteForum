@@ -28,3 +28,6 @@ class Reply(models.Model):
     reply_to = models.ForeignKey(Topic, null=True)
     author = models.ForeignKey(User, null=True)
     pub_date = models.DateTimeField(null=True)
+
+    def __str__(self):
+        return self.content[:50]
