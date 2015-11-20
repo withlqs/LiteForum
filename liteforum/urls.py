@@ -15,6 +15,7 @@ urlpatterns = [
     url(r'^accounts/login/+$', user.views.login),
     url(r'^accounts/logout/+$', user.views.logout),
     url(r'^accounts/register/+$', user.views.register),
+    url(r'^accounts/profile/+$', user.views.logged),
     url(r'^accounts/profile/(?P<user_id>[0-9])/+$', user.views.profile),
     url(r'^accounts/profile/edit/+$', user.views.profile_edit),
     url(r'^accounts/restore/+$', user.views.restore),
