@@ -14,6 +14,10 @@ from user.models import User
 admin_name = 'administrator'
 
 
+def logged(request):
+    return HttpResponseRedirect('/')
+
+
 def restore(request):
     return Http404
 
