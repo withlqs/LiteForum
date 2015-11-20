@@ -18,15 +18,15 @@
 </head>
 <body>
 <div class="container">
-    <h2 class="form-register-heading">Register Your Account</h2>
+    <h2 class="form-register-heading">注册新账户</h2>
 
     <form class="form-horizontal" action="" method="post">{% csrf_token %}
         {{ form.as_p }}
         <p><label for="email">Email:</label> <input id="email" name="email" type="email"/></p>
 
         <div class="form-group">
-            <input class="btn btn-lg btn-primary" type="submit" value="Register"
-                   style="background-color: #1abc9c; border-color: #1abc9c; width:100%">
+            <input class="btn btn-lg btn-primary btn-block" type="submit" value="注册"
+                   style="background-color: #1abc9c; border-color: #1abc9c;">
         </div>
 
     </form>
