@@ -25,17 +25,14 @@ def home(request):
 
     # tlist = [x for x, y in sorted(tl, key=lambda x:x[1])[:20]]
     tlist = Topic.objects.order_by('-upd_date')
+    tlist = [(t, t.author.get_user()['gravatar']) for t in tlist]
     nlist = sorted(tn, key=lambda x: -x[1])[:10]
-
+    print(nlist)
     return render(request, 'topic/home.html', {'tlist': tlist, 'nlist': nlist})
 
 
 def member(request, username):
     return HttpResponse("Member Page: %s" % username)
-
-
-def topic_list(request):
-    return HttpResponse("Topic List Page")
 
 
 def topic(request, topic_id):
@@ -68,7 +65,14 @@ def topic(request, topic_id):
 def node(request, nodename):
     node = get_object_or_404(Node, codename=nodename)
     tlist = node.topic_set.order_by('-upd_date')
-    return render(request, 'topic/node.html', {'node': node, 'tlist': tlist})
+    tlist = [(t, t.author.get_user()['gravatar']) for t in tlist]
+
+    raw_nlist = Node.objects.all()
+    tn = []
+    for n in raw_nlist:
+        tn.append((n, n.topic_set.count()))
+    nlist = sorted(tn, key=lambda x: -x[1])[:10]
+    return render(request, 'topic/node.html', {'node': node, 'tlist': tlist, 'nlist': nlist})
 
 
 def node_list(request):
