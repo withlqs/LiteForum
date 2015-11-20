@@ -1,35 +1,99 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Edit Profile</title>
-</head>
-<body>
-<form name="form-edit" method="post" action="">{% csrf_token %}
-    UserID:{{ user.id }}<br/>
-    Username:{{ user.username }}<br/>
+{% extends 'topic/base.html' %}
 
-    <input type="hidden" name="username" value="{{ user.username }}"/>
-    <input type="hidden" name="id" value="{{ user.id }}"/>
+{% include 'topic/navbar.html' %}
+
+{% block content %}
+    <form name="form-edit" method="post" action="" class="form-horizontal">{% csrf_token %}
+        <input type="hidden" name="username" value="{{ user.username }}"/>
+        <input type="hidden" name="id" value="{{ user.id }}"/>
+        {#        UserID:{{ user.id }}<br/>#}
+        {#        Username:{{ user.username }}<br/>#}
+        <div class="form-group">
+            <label for="inputPassword3" class="col-sm-2 control-label">User ID</label>
+
+            <div class="col-sm-10">{{ user.id }}</div>
+        </div>
+        <div class="form-group">
+            <label for="inputPassword3" class="col-sm-2 control-label">Username</label>
+
+            <div class="col-sm-10">{{ user.username }}</div>
+        </div>
+
+        <div class="form-group">
+            <label for="inputPassword3" class="col-sm-2 control-label">New Password</label>
+
+            <div class="col-sm-10"><input id="passwor1" name="password1" type="password" class="form-control"
+                                          placeholder="Password"/>{% if new_password_error %}
+                {{ new_password_error }}{% endif %}
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputPassword3" class="col-sm-2 control-label">Repeat New Password</label>
+
+            <div class="col-sm-10">
+                <input id="password2" name="password2" type="password" class="form-control" placeholder="Password"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputPassword3" class="col-sm-2 control-label">Email</label>
+
+            <div class="col-sm-10">
+                <input id="email" name="email" type="email" class="form-control" value="{{ user.email }}"
+                       required="required"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputPassword3" class="col-sm-2 control-label">Web Site</label>
+
+            <div class="col-sm-10">
+                <input id="site" name="site" class="form-control" type="text" value="{{ user.site }}"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputPassword3" class="col-sm-2 control-label">Location</label>
+
+            <div class="col-sm-10">
+                <input id="location" name="location" class="form-control" type="text" value="{{ user.location }}"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputPassword3" class="col-sm-2 control-label">Comment</label>
+
+            <div class="col-sm-10">
+                <input id="comment" name="comment" class="form-control" type="text" value="{{ user.comment }}"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default">修改</button>
+            </div>
+        </div>
+    </form>
+
+    {#    <form name="form-edit" method="post" action="">{% csrf_token %}#}
+    {#        UserID:{{ user.id }}<br/>#}
+    {#        Username:{{ user.username }}<br/>#}
+    {##}
     {#    <p><label for="password">Password:</label> <input id="password" name="password" value="{{ password }}" type="password" required="required"/>{% if password_error %}{{ password_error }}{% endif %}</p>#}
-
-    <p><label for="password1">New Password:</label> <input id="passwor1" name="password1"
-                                                           type="password"/>{% if new_password_error %}
-        {{ new_password_error }}{% endif %}</p>
-
-    <p><label for="password2">Repeat New Password:</label> <input id="password2" name="password2" type="password"/></p>
-
-    <p><label for="email">Email:</label> <input id="email" name="email" type="email" value="{{ user.email }}"
-                                                required="required"/></p>
-
-    <p><label for="site">Web Site:</label> <input id="site" name="site" type="site" value="{{ user.site }}"/></p>
-
-    <p><label for="location">Location:</label> <input id="location" name="location" type="location"
-                                                      value="{{ user.location }}"/></p>
-
-    <p><label for="comment">Comment:</label> <input id="comment" name="comment" type="comment"
-                                                    value="{{ user.comment }}"/></p>
-    <input type="submit"/>
-</form>
-</body>
-</html>
+    {##}
+    {#        <p><label for="password1">New Password:</label> <input id="passwor1" name="password1"#}
+    {#                                                               type="password"/>{% if new_password_error %}#}
+    {#            {{ new_password_error }}{% endif %}</p>#}
+    {##}
+    {#        <p><label for="password2">Repeat New Password:</label> <input id="password2" name="password2" type="password"/>#}
+    {#        </p>#}
+    {##}
+    {#        <p><label for="email">Email:</label> <input id="email" name="email" type="email" value="{{ user.email }}"#}
+    {#                                                    required="required"/></p>#}
+    {##}
+    {#        <p><label for="site">Web Site:</label> <input id="site" name="site" type="site" value="{{ user.site }}"/></p>#}
+    {##}
+    {#        <p><label for="location">Location:</label> <input id="location" name="location" type="location"#}
+    {#                                                          value="{{ user.location }}"/></p>#}
+    {##}
+    {#        <p><label for="comment">Comment:</label> <input id="comment" name="comment" type="comment"#}
+    {#                                                        value="{{ user.comment }}"/></p>#}
+    {#        <input type="submit"/>#}
+    {#    </form>#}
+{% endblock %}
