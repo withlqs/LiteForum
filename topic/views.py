@@ -28,7 +28,12 @@ def home(request):
     tlist = [(t, t.author.get_user()['gravatar']) for t in tlist]
     nlist = sorted(tn, key=lambda x: -x[1])[:10]
     print(nlist)
-    return render(request, 'topic/home.html', {'tlist': tlist, 'nlist': nlist})
+
+    xuser = ''
+    if request.user.is_authenticated() and request.user.username != 'admin':
+        xuser = User.objects.get(username=request.user.get_username()).get_user()
+
+    return render(request, 'topic/home.html', {'tlist': tlist, 'nlist': nlist, 'user': xuser})
 
 
 def member(request, username):
