@@ -4,9 +4,10 @@
 
 {% block content %}
     <h1>节点列表</h1>
-    <ul>
         {% for n in nlist %}
-            <li><a href="/nodes/{{ n.codename }}">{{ n.name }}({{ n.topic_set.all.count }})</a></li>
+
+            <button type="button" class="btn btn-default navbar-btn"
+                    onclick="window.location='/nodes/{{ n.codename }}';"> {{ n.name }}({{ n.topic_set.all.count }})
+            </button>
         {% endfor %}
-    </ul>
 {% endblock %}
