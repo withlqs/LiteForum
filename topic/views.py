@@ -12,25 +12,19 @@ def logged(request):
 
 
 def home(request):
-    # raw_tlist = Topic.objects.all()
     raw_nlist = Node.objects.all()
-
-    # tl = []
-    # for t in raw_tlist:
-    #     tl.append((t, t.upd_date))
-
     tn = []
     for n in raw_nlist:
         tn.append((n, n.topic_set.count()))
-
-    # tlist = [x for x, y in sorted(tl, key=lambda x:x[1])[:20]]
     tlist = Topic.objects.order_by('-upd_date')
     tlist = [(t, t.author.get_user()['gravatar']) for t in tlist]
     nlist = sorted(tn, key=lambda x: -x[1])[:10]
-    print(nlist)
+    # print(nlist)
 
     xuser = ''
-    if request.user.is_authenticated() and request.user.username != 'admin':
+    if request.user.is_authenticated() \
+            and User.objects.filter(username=request.user.username) is not None \
+            and request.user.username != 'admin':
         xuser = User.objects.get(username=request.user.get_username()).get_user()
 
     return render(request, 'topic/home.html', {'tlist': tlist, 'nlist': nlist, 'user': xuser})
