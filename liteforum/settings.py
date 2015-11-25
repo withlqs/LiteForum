@@ -58,7 +58,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, 'liteforum_app/user/templates').replace('\\', '/'),
+            os.path.join(BASE_DIR, 'liteforum_app/user/../liteforum_app/templates').replace('\\', '/'),
             os.path.join(BASE_DIR, 'liteforum_app/topic/templates').replace('\\', '/'),
         ],
         'APP_DIRS': True,
@@ -107,5 +107,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "liteforum_app/user/static"),
+    os.path.join(BASE_DIR, "liteforum_app/user/../liteforum_app/static"),
 )

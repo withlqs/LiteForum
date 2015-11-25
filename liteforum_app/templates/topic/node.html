@@ -1,13 +1,11 @@
-{% extends 'topic/base.html' %}
+{% extends '/base.html' %}
 
-{% include 'topic/navbar.html' %}
+{% include '/navbar.html' %}
 
-{% block title %}首页 - LiteForum{% endblock %}
 {% block content %}
-{#主面板#}
     <div class="col-md-9">
         <div class="panel panel-default">
-            <div class="panel-heading">最新主题</div>
+            <div class="panel-heading">节点：{{ node.name }}</div>
             {% for t, avt in tlist %}
                 <div class="panel-body">
                     <div style="border-bottom: 1px solid #e5e5e5; padding: 15px 15px; margin: -15px -15px;">
@@ -21,7 +19,7 @@
                             </h4>
                             <span><a href="/accounts/profile/{{ t.author.id }}">{{ t.author.username }}</a></span>
                             &nbsp;
-                            <span style="color: gray">最后更新于{{ t.upd_date }}</span>
+                            <span style="color: gray">{{ t.upd_date }}</span>
                             &nbsp <a href="/nodes/{{ t.node.codename }}"
                                      style="color: black; background-color: #e5e5e5">{{ t.node.name }}</a>
                         </div>
@@ -30,8 +28,6 @@
             {% endfor %}
         </div>
     </div>
-
-{#右边栏#}
     <div class="col-md-3">
         <div class="panel panel-default">
             <div class="panel-heading">热门节点</div>
