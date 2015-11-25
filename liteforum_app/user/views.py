@@ -5,9 +5,9 @@ from django.contrib.auth import views
 from django.http import Http404, HttpResponseRedirect
 from django.shortcuts import RequestContext
 from django.shortcuts import render_to_response
+from . import utils
 
-from user import utils
-from user.models import User
+from liteforum_app.user.models import User
 
 # Create your views here.
 

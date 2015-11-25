@@ -1,6 +1,6 @@
 from django.db import models
 
-from user.models import User
+from liteforum_app.user.models import User
 
 
 class Node(models.Model):

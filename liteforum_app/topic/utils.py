@@ -1,4 +1,4 @@
-from topic.models import Topic, Reply
+from liteforum_app.topic import Topic, Reply
 
 
 def user_topic_history(username):

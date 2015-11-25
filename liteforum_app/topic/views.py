@@ -2,7 +2,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
 from django.utils import timezone
 
-from user.models import User
+from liteforum_app.user.models import User
 from .forms import TopicForm, ReplyForm
 from .models import Topic, Node, Reply
 
@@ -27,7 +27,7 @@ def home(request):
             and request.user.username != 'admin':
         xuser = User.objects.get(username=request.user.get_username()).get_user()
 
-    return render(request, 'topic/home.html', {'tlist': tlist, 'nlist': nlist, 'user': xuser})
+    return render(request, 'home.html', {'tlist': tlist, 'nlist': nlist, 'user': xuser})
 
 
 def member(request, username):
@@ -58,7 +58,7 @@ def topic(request, topic_id):
     else:
         form = ReplyForm()
 
-    return render(request, 'topic/topic_detail.html', {'t': topic, 'rlist': rlist, 'form': form, 'user': user})
+    return render(request, 'topic_detail.html', {'t': topic, 'rlist': rlist, 'form': form, 'user': user})
 
 
 def node(request, nodename):
@@ -71,12 +71,12 @@ def node(request, nodename):
     for n in raw_nlist:
         tn.append((n, n.topic_set.count()))
     nlist = sorted(tn, key=lambda x: -x[1])[:10]
-    return render(request, 'topic/node.html', {'node': node, 'tlist': tlist, 'nlist': nlist})
+    return render(request, 'node.html', {'node': node, 'tlist': tlist, 'nlist': nlist})
 
 
 def node_list(request):
     nlist = Node.objects.all()
-    return render(request, 'topic/node_list.html', {'nlist': nlist})
+    return render(request, 'node_list.html', {'nlist': nlist})
 
 
 def new_post(requset):
@@ -95,7 +95,7 @@ def new_post(requset):
             return HttpResponseRedirect('/t/%s' % t.id)
     else:
         form = TopicForm()
-    return render(requset, 'topic/new_post.html', {'form': form})
+    return render(requset, 'new_post.html', {'form': form})
 
 
 def test(request):

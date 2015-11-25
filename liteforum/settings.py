@@ -37,8 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'user',
-    'topic',
+    'liteforum_app',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -58,8 +57,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, 'user/templates').replace('\\', '/'),
-            os.path.join(BASE_DIR, 'topic/templates').replace('\\', '/'),
+            os.path.join(BASE_DIR, 'liteforum_app/templates').replace('\\', '/'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -107,5 +105,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "user/static"),
+    os.path.join(BASE_DIR, "liteforum_app/user/../liteforum_app/static"),
 )

@@ -1,6 +1,6 @@
 from django.db import models
 
-from user import utils
+from liteforum_app.user import utils
 
 
 class User(models.Model):
@@ -10,6 +10,7 @@ class User(models.Model):
     site = models.TextField()
     location = models.TextField()
     comment = models.TextField()
+
 
     def get_user(self):
         user = {
