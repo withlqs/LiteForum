@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="3280777745">
-    <data-source source="LOCAL" name="Django default" uuid="3ba6d417-fc36-467a-bd4a-70377f88310a">
+  <component name="DataSourceManagerImpl" format="xml" hash="4217154140">
+    <data-source source="LOCAL" name="Django default" uuid="94ddd8ed-8786-4560-89f3-618cfe5e7163">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <imported>true</imported>
@@ -11,14 +11,6 @@
       <explain-plan-config>
         <provider>com.intellij.database.plan.ExplainPlanProvider.NullExplainPlanProvider</provider>
       </explain-plan-config>
-      <libraries>
-        <library>
-          <url>file://$APPLICATION_CONFIG_DIR$/jdbc-drivers/xerial-sqlite-license.txt</url>
-        </library>
-        <library>
-          <url>file://$APPLICATION_CONFIG_DIR$/jdbc-drivers/sqlite-jdbc-3.8.9.jar</url>
-        </library>
-      </libraries>
     </data-source>
   </component>
 </project>

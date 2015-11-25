@@ -11,6 +11,7 @@ class User(models.Model):
     location = models.TextField()
     comment = models.TextField()
 
+
     def get_user(self):
         user = {
             'username': str(self.username),
