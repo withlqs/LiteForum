@@ -37,8 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'liteforum_app.user',
-    'liteforum_app.topic',
+    'liteforum_app',
 )
 
 MIDDLEWARE_CLASSES = (
