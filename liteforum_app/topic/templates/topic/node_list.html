@@ -1,0 +1,22 @@
+{% extends 'topic/base.html' %}
+
+{% include 'topic/navbar.html' %}
+
+{% block content %}
+    <div class="col-md-9">
+        <div class="panel panel-default">
+            <div class="panel-heading">节点列表</div>
+            {% for n in nlist %}
+                <div class="panel-body">
+                    <div style="border-bottom: 1px solid #e5e5e5; padding: 15px 15px; margin: -15px -15px;">
+                        <div class="media-body" style="padding: 5px;">
+                            <h4 class="media-heading"><a href="/nodes/{{ n.codename }}" style="color: black">{{ n.name }}</a>
+                            </h4>
+                            <span style="color: gray">共有{{ n.topic_set.count }}篇主题</span>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

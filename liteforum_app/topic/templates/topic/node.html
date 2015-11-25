@@ -1,0 +1,43 @@
+{% extends 'topic/base.html' %}
+
+{% include 'topic/navbar.html' %}
+
+{% block content %}
+    <div class="col-md-9">
+        <div class="panel panel-default">
+            <div class="panel-heading">节点：{{ node.name }}</div>
+            {% for t, avt in tlist %}
+                <div class="panel-body">
+                    <div style="border-bottom: 1px solid #e5e5e5; padding: 15px 15px; margin: -15px -15px;">
+                        <div class="media-left">
+                            <a href="/accounts/profile/{{ t.author.id }}">
+                                <img src="{{ avt }}" height="48" width="48"/>
+                            </a>
+                        </div>
+                        <div class="media-body" style="padding: 5px;">
+                            <h4 class="media-heading"><a href="/t/{{ t.id }}" style="color: black">{{ t.title }}</a>
+                            </h4>
+                            <span><a href="/accounts/profile/{{ t.author.id }}">{{ t.author.username }}</a></span>
+                            &nbsp;
+                            <span style="color: gray">{{ t.upd_date }}</span>
+                            &nbsp <a href="/nodes/{{ t.node.codename }}"
+                                     style="color: black; background-color: #e5e5e5">{{ t.node.name }}</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="panel panel-default">
+            <div class="panel-heading">热门节点</div>
+            <div class="panel-body">
+                <ul class="pager">
+                    {% for n, cnt in nlist %}
+                        <li><a href="/nodes/{{ n.codename }}">{{ n.name }}({{ cnt }})</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}
