@@ -3,11 +3,10 @@ from django.contrib.auth import authenticate
 from django.contrib.auth import forms
 from django.contrib.auth import views
 from django.http import Http404, HttpResponseRedirect
-from django.shortcuts import RequestContext
-from django.shortcuts import render_to_response
-from . import utils
+from django.shortcuts import render
 
 from liteforum_app.user.models import User
+from . import utils
 
 # Create your views here.
 
@@ -37,7 +36,11 @@ def success(request):
     if not request.user.is_authenticated():
         return HttpResponseRedirect('/accounts/login/')
     username = request.user.get_username()
-    return render_to_response('success.html', context_instance=RequestContext(request))
+    return render(
+        request,
+        'success.html',
+        # context_instance=RequestContext(request)
+    )
 
 
 def login(request):
@@ -60,7 +63,8 @@ def profile(request, user_id):
     tlist = user.topic_set.order_by('-pub_date')
     rlist = user.reply_set.order_by('-pub_date')
 
-    return render_to_response(
+    return render(
+        request,
         'accounts/profile.html',
         {
             'user': user.get_user(),
@@ -79,14 +83,15 @@ def profile_edit(request):
     user = utils.User.objects.filter(username=request.user.get_username())
     user_info = User.objects.filter(username=request.user.get_username())
     if request.method == 'GET':
-        return render_to_response(
+        return render(
+            request,
             'accounts/profile_edit.html',
             {
                 'user': user_info[0].get_user(),
                 'new_password_error': None,
                 'password_error': None,
             },
-            context_instance=RequestContext(request)
+            # context_instance=RequestContext(request)
         )
     else:
         # authentication = authenticate(username=request.user.get_username(), password=request.POST['password'])
@@ -104,14 +109,15 @@ def profile_edit(request):
             )
             return HttpResponseRedirect('/accounts/profile/' + str(user[0].id))
         else:
-            return render_to_response(
+            return render(
+                request,
                 'accounts/profile_edit.html',
                 {
                     'user': request.POST,
                     'new_password_error': '*Repeat Password Do NOT Match',
                     'password_error': None,
                 },
-                context_instance=RequestContext(request)
+                # context_instance=RequestContext(request)
             )
 
             # else:
@@ -135,7 +141,7 @@ def register(request):
             _username = form.cleaned_data['username']
             _email = request.POST['email']
             print(User.objects.all().count())
-            if User.objects.all().count() == 0 and utils.User.objects.all().count() != 0:
+            if User.objects.all().count() < utils.User.objects.all().count():
                 admin = utils.User.objects.all()[0]
                 User(
                     username=admin.username,
@@ -151,6 +157,10 @@ def register(request):
             return HttpResponseRedirect('/')
     else:
         form = auth.forms.UserCreationForm()
-    return render_to_response('accounts/register.html', {
-        'form': form,
-    }, context_instance=RequestContext(request))
+    return render(
+        request,
+        'accounts/register.html', {
+            'form': form,
+        },
+        # context_instance=RequestContext(request)
+    )
