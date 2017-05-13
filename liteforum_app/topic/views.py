@@ -22,9 +22,11 @@ def home(request):
     # print(nlist)
 
     xuser = ''
+    # if request.user.is_authenticated() \
+    #         and User.objects.filter(username=request.user.username) is not None \
+    #         and request.user.username != 'admin':
     if request.user.is_authenticated() \
-            and User.objects.filter(username=request.user.username) is not None \
-            and request.user.username != 'admin':
+            and User.objects.filter(username=request.user.username) is not None:
         xuser = User.objects.get(username=request.user.get_username()).get_user()
 
     return render(request, 'home.html', {'tlist': tlist, 'nlist': nlist, 'user': xuser})

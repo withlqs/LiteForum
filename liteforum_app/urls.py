@@ -1,7 +1,7 @@
 from django.conf.urls import url
+
 from .topic.views import home, topic, node, node_list, new_post
 from .user.views import login, logged, logout, profile, profile_edit, restore, register
-
 
 urlpatterns = [
     url(r'^$', home, name='home'),
